@@ -1,4 +1,9 @@
 <section>
-  <h1>About Me</h1>
-  <p>A little something about me.</p>
+  <h1>About Us</h1>
+  <p>
+    {% if site.gravatar_email %}
+    <img id="gravatar" src="{% gravatar_image %}" alt="Gravatar of {{ site.author}} " title="Gravatar of {{ site.author }}" />
+    {% endif %}
+    We are a group of Duke University undergraduate students responsible for developing and maintaining the websites of Duke's independent daily newspaper, <a href="http://www.dukechronicle.com">The Chronicle</a>.
+  </p>
 </section>
