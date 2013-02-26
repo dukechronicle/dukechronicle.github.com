@@ -9,7 +9,7 @@ $link-color-active: adjust-color($link-color-hover, $lightness: -15) !default;
 
 // Main Section Colors
 $main-bg: #f8f8f8 !default;
-$page-bg: #252525 !default;
+$page-bg: #d8e8ef !default;
 $article-border: #eeeeee !default;
 
 $header-bg: #333 !default;
@@ -83,4 +83,5 @@ body {
       border-right: 1px solid $sidebar-border;
     }
   }
+  @include box-shadow(gray 0px 0px 10px);
 }
