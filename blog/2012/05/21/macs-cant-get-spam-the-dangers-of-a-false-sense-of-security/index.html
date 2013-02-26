@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Macs Can't Get Spam: The Dangers of a False Sense of Security - Chronline</title>
+  <meta name="author" content="The Chronicle">
+
+  
+  <meta name="description" content="I recently had the pleasure to graduate from Duke University. At one of my graduation ceremonies, I ran into the parent of a friend who asked me what &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://thechronicle.github.com/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Chronline" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5900287-25']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Chronline</a></h1>
+  
+    <h2>The Official Blog of the Duke Chronicle Development Team.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:thechronicle.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Macs Can't Get Spam: The Dangers of a False Sense of Security</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-21T01:43:00-04:00" pubdate data-updated="true">May 21<span>st</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I recently had the pleasure to graduate from Duke University. At one of my graduation ceremonies, I ran into the parent of a friend who asked me what I was doing after graduation. This parent was no tech-fanatic, so I summarized my cloud and virtualization automation gig at Microsoft by saying I worked on a product that allowed operating systems to run other operating systems as applications, so one could run Linux on their Windows machine, Windows on their Mac machine, etc. Of course, this is only a tiny sliver of the true description and value of virtualization to computer systems, but to a parent who probably had never even heard of BootCamp or VMWare, let alone hypervisors or virtual machines, it seemed like an acceptable summary.</p>
+
+<p>Of course, the parent said how cool that was and how proud they were of me, the same thing all parents say to their children&#8217;s friends. But what was really interesting was what she said next. &#8220;I could actually really use that software,&#8221; she said. &#8220;I run a business on Windows machines and I just get so much spam! I&#8217;d love to switch to Macs without having to buy new computers for my business.&#8221; I kind of just scratched my head for a second. I tried to explain to her the fallacy of her argument &#8211; that email is a completely separate module from a computer operating system, and no matter what OS she used, spammers could still send email to her email address. Sure a different email client might filter the spam out better or automatically delete it, but that has nothing to do with the operating system. There&#8217;s a variety of clients for Mac, Windows, and in the browser that do a good job filtering spam. My comments seemed to go in one ear and out the other. &#8220;But Macs are a closed system. They can&#8217;t get viruses or malware or spam,&#8221; she said. You can&#8217;t make this stuff up&#8230;</p>
+
+<p>Now before I go on, I&#8217;d like to note that Macs definitely have their uses. For one, their hardware is great. They&#8217;re built on top of Unix, so they have a great terminal which makes development easy. They work great as general purpose computers. And they look pretty. But Macs are not a safe-haven when it comes to security, and the fact that Apple advertises them as such actually makes Mac users even less secure because they have a false sense of security. Because of this false sense of security, many Mac users click on questionable links on the internet, install sketchy programs, and don&#8217;t install antivirus software. Apple has always stated things to this effect, such as this snippet from their website:</p>
+
+<blockquote><p>with virtually no effort on your part, OS X defends against viruses and other malicious applications, or malware</p></blockquote>
+
+<p>Literally making users believe they have to put zero effort or thought into defending themselves on a Mac! If this were the case, would security vendor ESET have found that Mac users lost more money on average than PC owners did in phishing attacks? Would the recent Flashback Trojan have infected 1% of all Macs in the world &#8211; a larger percent infection than the &#8220;most dangerous malware to attack Windows-based computers&#8221; ever, Conficker? Would Mac vulnerabilities in WebKit, Samba, DNS, MDNS, Apache, and Java have gone unpatched by Apple for many months after all other platforms had fixed the same vulnerabilities in their software? Despite all this, another ESET survey found that more than 50% of computer users thought of PCs as very or extremely vulnerable, whereas only 20% of computer users thought of Mac that way. If there&#8217;s one thing Apple does better than making computers, its marketing!</p>
+
+<p>Until recently, Windows usage was much greater than Mac usage, and for this reason virus makers always targeted Windows PCs in their attacks, because they simply had more users to exploit. Macs were more secure than PCs, not due to the operating system&#8217;s security, but to the lack of interest by malicious parties. Today, however, Mac market share has grown enough that malicious parties are starting to target the platform, and while PC users know they must be mindful of what they click on and download to their computer, because they have had to be mindful in the past, Mac users have been lulled into the naivety that they are safe. The problem is even worse considering social engineering attacks like phishing scams work in the browser and so are cross platform, and are almost impossible for OS protection software to prevent due to their social nature. For example, if someone emails you saying they are Facebook and they need your password emailed to them to confirm you are who you say you are because someone recently tried to hack in to your account, is anything built into the computer operating system going to delete this email or warn you its fishy? Nope. Maybe, and only maybe, an email client will. But social engineering attacks happen in so many ways that the only way to truly defend against all of them is to recognize that the Internet is a dangerous place, and to take things with a grain of salt before you click on or install them. The best defense one can have in the world of ubiquitous Internet isn&#8217;t something on the computer, but something in the brain.</p>
+
+<p>Think of it this way &#8211; if you were wearing an impenetrable suit of armor from head to toe, why not run into the middle of a battlefield? The problem is, if that armor isn&#8217;t as safe as its maker says, you&#8217;d actually be putting yourself in way more danger than even someone wearing no armor, because you are willing to put yourself into much more dangerous situations with no thoughts of the consequences, whereas the defenseless person knows not to do that. Where this metaphor isn&#8217;t completely sound is that, in sword fighting, it is a no brainer to all of us that you should take precaution no matter what defenses you&#8217;re wearing. But this isn&#8217;t the case in computer security. Staying away from an enemy with a sword is a much more straightforward &#8220;instinct&#8221; than the lessons people need to learn about defending themselves on the Internet, where malicious attacks are disguised or socially engineered. That&#8217;s the problem with Mac security. It is good, just as Windows security is good, just as Linux security is good. But Mac security is no where near as good as its marketing presents, and it never will be, because no amount of secure software can replace the basic understanding that one must be alert to danger on the Internet at all times.</p>
+
+<p>So next time you log on to your computer, regardless of what OS you use, or how secure you think it is, make sure to proceed with caution.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joe Levy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-21T01:43:00-04:00" pubdate data-updated="true">May 21<span>st</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/apple/'>apple</a>, <a class='category' href='/blog/categories/joe-levy/'>joe levy</a>, <a class='category' href='/blog/categories/mac/'>mac</a>, <a class='category' href='/blog/categories/security/'>security</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://thechronicle.github.com/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/" data-via="" data-counturl="http://thechronicle.github.com/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/" title="Previous Post: Hacking Foursquare: Taking Over the White House from North Carolina">&laquo; Hacking Foursquare: Taking Over the White House from North Carolina</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/06/01/dont-be-evil/" title="Next Post: Don't Be Evil, Google">Don't Be Evil, Google &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Us</h1>
+  <p>
+    
+    <img id="gravatar" src="http://www.gravatar.com/avatar/b7f91c39d01756bc5fc2df2c5d8a1dce" alt="Gravatar of The Chronicle " title="Gravatar of The Chronicle" />
+    
+    We are a group of Duke University undergraduate students responsible for developing and maintaining the websites of Duke's independent daily newspaper, <a href="http://www.dukechronicle.com">The Chronicle</a>.
+  </p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/06/24/introducing-the-facebook-open-graph-redirect-chrome-extension/">Introducing the Facebook Open Graph Redirect Chrome Extension</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/08/this-page-is-best-viewed-from-the-united-states/">This Page is Best Viewed From the United States</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/01/dont-be-evil/">Don't Be Evil, Google</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/">Macs Can't Get Spam: The Dangers of a False Sense of Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/">Hacking Foursquare: Taking Over the White House from North Carolina</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/thechronicle">@thechronicle</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'thechronicle',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - The Chronicle -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'chronline';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://thechronicle.github.com/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/';
+        var disqus_url = 'http://thechronicle.github.com/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

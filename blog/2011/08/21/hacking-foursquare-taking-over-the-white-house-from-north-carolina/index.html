@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Hacking Foursquare: Taking Over the White House from North Carolina - Chronline</title>
+  <meta name="author" content="The Chronicle">
+
+  
+  <meta name="description" content="I&#8217;d always found foursquare a bit peculiar. What could possibly compel a person to get up early after a Friday night of partying and hurry to &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://thechronicle.github.com/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Chronline" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5900287-25']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Chronline</a></h1>
+  
+    <h2>The Official Blog of the Duke Chronicle Development Team.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:thechronicle.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Hacking Foursquare: Taking Over the White House From North Carolina</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-21T01:18:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2011</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I&#8217;d always found foursquare a bit peculiar. What could possibly compel a person to get up early after a Friday night of partying and hurry to the other side of campus to click a button on their phone and &#8216;check in&#8217;? Why were foursquare locations popping up for the most arbitrary of things&#8230;Classroom 6 in Old Chem, a local frat house, or even my dorm&#8217;s 3rd floor bathroom. I noticed that foursquare was gaining popularity and I really couldn&#8217;t figure out why. Yes, the service lets you tell everyone where you are every second of every day, and yes, it lets you brag to your other foursquare pals when you become the &#8216;mayor&#8217; of a location both of you were fighting over &#8211; whether it be the Duke Chapel or the dorm bathroom. To me, foursquare was a stupid game - one that I thought could easily be cheated.</p>
+
+<p>I originally had no intention of hacking foursquare - I just wondered whether I could do it. I knew that HTTP had no inherit location header that foursquare could take advantage of, so they would have to get the user&#8217;s location one layer up &#8211; the API level. And I knew foursquare had a public api. This lead me to the hypothesis that I could probably pass false GPS coordinates to the foursquare API, and check in to any location near that location. I did a quick google search to confirm. It turned out to be even easier than that. According to KrazyDad in his blog post <a href="http://krazydad.com/blog/2010/02/15/mayor-of-the-north-pole/">Mayor of the North Pole</a>, you didn&#8217;t even need to pass coordinates to foursquare&#8217;s api &#8211; you simply pass a venue id (a location&#8217;s id) to the check-in api url, and foursquare will credit you as having checked in and been there.</p>
+
+<p>I now knew, in theory that it could be done. But I wanted to actually get a script working that could do it. Not just a script that could commit check-in fraud, but one that could commit mayorship fraud. A hop, skip, and a jump later, <a href="https://github.com/jodoglevy/Foursquare-Automated-Check-in-Script">this PHP script</a> was born. Feel free to test the script yourself&#8230;all it requires is a PHP server (with curl installed) and a browser window. The venue id of a location can be found by going to the locations page on foursquare. For example, the White House&#8217;s venue id is 3945, which I found via its foursquare url: <a href="https://foursquare.com/venue/3945">https://foursquare.com/venue/3945</a>. I will probably be publishing an entirely javascript version soon so anyone with a web browser can run the script.</p>
+
+<p>In under 40 lines of code, I had created a script that would, every day, automatically check me in to a number of locations, eventually taking the mayorship of those locations. Further testing of the script showed that you can check in to any location as long as it is somewhat near the last location you checked in to. Checking into a bar in Durham, NC and then an hour later to the White House in Washington, DC. worked. Rome and then Washington, DC in an hour didn&#8217;t. Presumably, if you wanted to check in to many places throughout the country, you just create a &#8216;check in path&#8217; from the first check in location you want to the last, in geospatial order.</p>
+
+<p>Yes there were fraud detectors, but I got around them. Like I said above, check ins too far away from one another over too short of a time period would be seen as invalid. Checking in to a location more than once a day was seen as invalid. But with patience, over the course of one or two months (depending on the locations popularity) this script would make me the mayor of that location, with no effort on my part, no matter where in the world I am, and keep that mayorship for however long I wanted it.</p>
+
+<p>Wanting to expose Foursquare&#8217;s flaws to its many worshipers on campus, I put the venue ids of Duke&#8217;s top locations into my script &#8211; the Duke Chapel, the Duke Gardens, Cameron Indoor Stadium, and even Shooters. Within a month I owned them all. People came up to me, and said, how did you do that? Ironically, stealing away foursquare mayorships was a great way to meet girls &#8211; they were the vast majority of foursquare users at Duke. Not wanting to offend any lovely ladies, I didn&#8217;t tell them I was hacking. The free wings Hooters offered to foursquare users every fourth check-in also encouraged me to keep my mouth shut.</p>
+
+<p>One day, Duke&#8217;s own CS professor, <a href="http://en.wikipedia.org/wiki/Owen_Astrachan">Owen Astrachan</a>, stopped me in the halls and asked me how I&#8217;d managed to steal the mayorship of his favorite on campus eatery while he and another CS professor had been constantly battling back and forth for the mayorship for over 2 months. Surprised the CS professors had not seen the fault in the service they used so frequently, I spilled the beans to him. He laughed, asked me some questions, and walked away. Months later, I heard Duke foursquare hacker &#8216;Joe L&#8217; was part of the course topic &#8216;Ethical Hacking&#8217; in Astrachan&#8217;s 400 person intro CS course: &#8216;Technical and Social Analysis of Information Science&#8217;. Then another 2 weeks went by. I heard from a friend on the &#8216;foursquare committee&#8217; (a group that promotes foursquare&#8217;s use on campus at Duke) that the group was trying to figure out how to stop the infamous Joe L from basically halting foursquare&#8217;s use at Duke. The end of the month came around, and I went to a Chronicle event. At the event, I was approached by my boss&#8217;s boss&#8217;s boss, a very angry, 90-pound girl, who had just learned I had stolen all of her Chronicle mayorships by cheating. This girl had plenty of reason to be upset &#8211; she came to the office every day to make sure the Chronicle paper came out on time in top quality. She wanted recognition for that, which she sought by being the mayor of the Chronicle offices on foursquare. My script had stolen that from her. Like this girl, many people became aware of how I was doing what I was doing, and got a little angry. Wanting to retain my job at the Chronicle, wanting to cool people down, and feeling I had made my point, I deleted all the Duke locations from my script. Slowly, my name faded from the mayorship position on over 30 Duke locations.</p>
+
+<p>But there was one location for which I kept the script running &#8211; the White House. I wanted to prove this script could truly disrupt foursquare, so I went after one of the most checked-in to places in the country &#8211; the president&#8217;s pad. And after about 2 months, I was unrightfully crowned mayor of the White House&#8230;a position almost as prestigious as President. Two days after becoming mayor, I was banned from foursquare, after almost 5 months of abusing the system:</p>
+
+<blockquote><p>Hi there,</p>
+
+<p>Our system has flagged your account due to frequent check-ins when you’re not actually at a place. While we love that you&#8217;re an enthusiastic user, it&#8217;s important to follow our guidelines in order to ensure the best experience for everyone! Please only check in when you&#8217;re spending time somewhere and your check-ins will be legitimate.</p>
+
+<p>Thanks!
+Parker</p></blockquote>
+
+<p>I don&#8217;t think its a coincidence that I was banned right after becoming the mayor of such a high profile location. My best guess is the former mayor of the white house reported me, as I had gone so long without getting caught I doubt I was automatically &#8216;flagged&#8217; by the system. This leads me to believe that the fraud detection system at foursquare is not very good &#8211; even if they did automatically catch me after 5 months of abusing the system, 5 months is a long time. Even after the ban, there was nothing stopping me from creating a new account, putting its credentials into my script, and doing it all again.</p>
+
+<p>I would love to provide foursquare screenshots of all this, but when I was banned my account was deleted so I can&#8217;t take any screenshots of it. But I do have some twitter posts from that time.</p>
+
+<p><img src="/images/embedded/joelevy-foursquare-tweet.png" alt="Joe Levy Foursquare Tweet" /></p>
+
+<p>A few weeks ago in the middle of the night I received a call from Pennsylvania. &#8216;Are you the dude who hacked foursquare and ran ****?&#8217; the drunk person on the other end of the phone said. He proceeded to call me the next Mark Zuckerberg because of my ability to do this. While I liked the compliment, I was getting way more credit than I deserve. Foursquare makes it very easy to abuse their service, and actually have no technological way to prevent location fraud if they want to use a public API. People don&#8217;t know just how easy it is to abuse the service. So I wrote this post. People need to know its not worth it to wake up early and run across campus to retain your mayorship, when a kid anywhere in the world can use a script like mine to beat you while he sleeps. Merchants need to know that they shouldn&#8217;t offer discounts or incentives to people who check-in, or their mayors, because a script like mine can get any number of abusers free stuff whenever they want, at any of the places that give foursquare discounts.</p>
+
+<p>Many people will probably dislike that I am providing a means for others to cheat. That is true, I am. But really what I am doing is providing full disclosure to a system that does not work. A system consumers, merchants, and VCs should not get over invested in because of how easy it is to manipulate. Feel free to keep using foursquare&#8230;but do so knowing it is a game with many loopholes.</p>
+
+<p><strong>Update</strong>: Since foursquare implemented OAuth, the script linked to in this post no longer works. I was able to get around this and automate checkins with a new script, but that&#8217;s a story for another day&#8230;</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Joe Levy</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-08-21T01:18:00-04:00" pubdate data-updated="true">Aug 21<span>st</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/duke/'>duke</a>, <a class='category' href='/blog/categories/foursquare/'>foursquare</a>, <a class='category' href='/blog/categories/hack/'>hack</a>, <a class='category' href='/blog/categories/joe-levy/'>joe levy</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://thechronicle.github.com/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/" data-via="" data-counturl="http://thechronicle.github.com/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/" title="Next Post: Macs Can't Get Spam: The Dangers of a False Sense of Security">Macs Can't Get Spam: The Dangers of a False Sense of Security &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>About Us</h1>
+  <p>
+    
+    <img id="gravatar" src="http://www.gravatar.com/avatar/b7f91c39d01756bc5fc2df2c5d8a1dce" alt="Gravatar of The Chronicle " title="Gravatar of The Chronicle" />
+    
+    We are a group of Duke University undergraduate students responsible for developing and maintaining the websites of Duke's independent daily newspaper, <a href="http://www.dukechronicle.com">The Chronicle</a>.
+  </p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/06/24/introducing-the-facebook-open-graph-redirect-chrome-extension/">Introducing the Facebook Open Graph Redirect Chrome Extension</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/08/this-page-is-best-viewed-from-the-united-states/">This Page is Best Viewed From the United States</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/06/01/dont-be-evil/">Don't Be Evil, Google</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/21/macs-cant-get-spam-the-dangers-of-a-false-sense-of-security/">Macs Can't Get Spam: The Dangers of a False Sense of Security</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/">Hacking Foursquare: Taking Over the White House from North Carolina</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/thechronicle">@thechronicle</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'thechronicle',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - The Chronicle -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'chronline';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://thechronicle.github.com/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/';
+        var disqus_url = 'http://thechronicle.github.com/blog/2011/08/21/hacking-foursquare-taking-over-the-white-house-from-north-carolina/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
